@@ -1,6 +1,6 @@
 # Sassy Classy Restaurat
 
-This is a project built to learn how to use SASS/SCSS and Gulp together, along with Browser-Sync. This was used with a project-based course on [Udemy](https://udemy.com/course/sass-the-complete-sass-course-css-preprocessor).
+This is a project built to learn how to use SASS/SCSS and Gulp together, along with Browser-Sync. This was used with a project-based course on [Udemy](https://udemy.com/course/sass-the-complete-sass-course-css-preprocessor). **See "Why Gulp?" down below.**
 
 ## Installation
 
