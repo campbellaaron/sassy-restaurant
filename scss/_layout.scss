@@ -1,6 +1,102 @@
 @use "base" as b;
 
+.navbar {
+    position: relative;
+    z-index: 200;
+
+    &-navigation {
+        display: flex;
+
+        &-left {
+            width: 50vw;
+            height: 100vh;
+            background-color: b.$color-dark;
+            position: fixed;
+            left: -50vw;
+            transition: left .8s cubic-bezier(1, 0, 0, 1);
+            
+            .left-img {
+                width: 50%;
+                position: absolute;
+                box-shadow: 0 15px 60px rgba(b.$color-black, 0.4);
+                opacity: 0.9;
+                border-radius: 10px;
+
+                &-1 {
+                    top: 15%;
+                    left: 15%;
+                }
+
+                &-2 {
+                    top: 35%;
+                    left: 25%;
+                }
+
+                &-3 {
+                    top: 55%;
+                    left: 35%;
+                }
+            }
+        }
+
+        &-right {
+            width: 50vw;
+            height: 100vh;
+            background-color: #1f1d1d;
+            position: fixed;
+            right: -50vw;
+            @include b.flexLayout;
+            transition: right .8s cubic-bezier(1, 0, 0, 1);
+        }
+
+        .nav-list {
+            &-item {
+                list-style: none;
+            }
+
+            &-link {
+                font-family: b.$font-dancingScript;
+                font-size: 3.1rem;
+                @include b.textStyles(capitalize);
+                color: b.$color-secondary;
+                text-decoration: none;
+                display: block;
+                margin: 1.25rem;
+                text-align: center;
+                transition: all .5s;
+
+                &:hover {
+                    color: b.$color-primary;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+    }
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+    left: 0;
+}
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+    right: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+    transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+    transform: rotateZ(-40deg);
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+    opacity: 0;
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+    transform: rotateZ(40deg);
+}
+
 .header {
+    position: relative;
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(b.$color-black, 0.8), rgba(b.$color-black, 0.6)), url(../images/bg.jpg) center no-repeat;
