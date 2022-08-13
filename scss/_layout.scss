@@ -14,6 +14,10 @@
             position: fixed;
             left: -50vw;
             transition: left .8s cubic-bezier(1, 0, 0, 1);
+
+            @media(max-width: 768px) {
+                display: none;
+            }
             
             .left-img {
                 width: 50%;
@@ -22,19 +26,39 @@
                 opacity: 0.9;
                 border-radius: 10px;
 
+                @media(max-width: 1300px) {
+                    width: 55%;
+                }
+                
+                @media(max-width: 1000px) {
+                    width: 65%;
+                }
+
                 &-1 {
                     top: 15%;
                     left: 15%;
+
+                    @media(max-width: 1000px) {
+                        left: 5%;
+                    }
                 }
 
                 &-2 {
                     top: 35%;
                     left: 25%;
+
+                    @media(max-width: 1000px) {
+                        left: 15%;
+                    }
                 }
 
                 &-3 {
                     top: 55%;
                     left: 35%;
+
+                    @media(max-width: 1000px) {
+                        left: 25%;
+                    }
                 }
             }
         }
@@ -47,6 +71,11 @@
             right: -50vw;
             @include b.flexLayout;
             transition: right .8s cubic-bezier(1, 0, 0, 1);
+
+            @media(max-width: 768px) {
+                width: 100vw;
+                right: -100vw;
+            }
         }
 
         .nav-list {
@@ -68,6 +97,10 @@
                 &:hover {
                     color: b.$color-primary;
                     letter-spacing: 4px;
+                }
+
+                @media(max-width: 600px) {
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -105,6 +138,10 @@
         display: flex;
         align-items: center;
         @include b.centering(15%);
+
+        @media(max-width: 500px) {
+            @include b.centering(12%);
+        }
     }
     &-banner {
         text-align: center;
@@ -116,10 +153,24 @@
     height: 90vh;
     display: flex;
     align-items: center;
+
+    @media(max-width: 900px) {
+        height: 70vh;
+    }
+
     &-left {
         width: 40%;
         position: relative;
-        left: -13rem;
+        left: -7rem;
+
+        @media(max-width: 1300px) {
+            left: -5rem;
+        }
+
+        @media(max-width: 768px) {
+            display: none;
+        }
+
         img {
             width: 100%;
             opacity: .7;
@@ -131,17 +182,34 @@
         flex-direction: column;
         align-items: center;
         padding: 0 6.25rem;
+
+        @media(max-width: 1300px) {
+            padding: 0 3rem;
+        }
+
+        @media(max-width: 768px) {
+            width: 100%;
+        }
+
+        .stars {
+            margin: 1.9rem 0;
+    
+            @media(max-width: 1000px) {
+                margin: 0.9rem 0;
+            }
+        }
+    
+        .star {
+            font-size: 0.9rem;
+            color: b.$color-primary;
+            margin-left: 10px;
+    
+            @media(max-width: 1000px) {
+                font-size: 0.75rem;
+            }
+        }
     }
 
-    .stars {
-        margin: 1.9rem 0;
-    }
-
-    .star {
-        font-size: 0.9rem;
-        color: b.$color-primary;
-        margin-left: 10px;
-    }
 
     .description {
         font-family: b.$font-josefinSans;
@@ -152,6 +220,18 @@
         
         &::first-letter {
             padding-left: 3rem;
+        }
+
+        @media(max-width: 1600px) {
+            font-size: 1.1rem;
+        }
+
+        @media(max-width: 1000px) {
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 500px) {
+            font-size: 0.75rem;
         }
     }
 }
@@ -168,6 +248,10 @@
     @include b.flexLayout;
     flex-direction: column;
 
+    @media(max-width: 500px) {
+        padding: 2.5rem 0;
+    }
+
     &-header {
         display: flex;
         align-items: center;
@@ -179,6 +263,11 @@
         width: 300px;
         justify-content: space-between;
         margin-bottom: 4.4rem;
+
+        @media(max-width: 500px) {
+            width: 200px;
+            margin-bottom: 2.5rem;
+        }
 
         &-item {
             list-style: none;
@@ -193,6 +282,14 @@
             &:hover {
                 color: b.$color-primary;
             }
+
+            @media(max-width: 1000px) {
+                font-size: 2.2rem;
+            }
+
+            @media(max-width: 500px) {
+                font-size: 1.6rem;
+            }
         }
     }
 
@@ -201,5 +298,15 @@
         font-size: 1.1rem;
         color: b.$color-secondary;
         @include b.textStyles(capitalize);
+
+        @media(max-width: 768px) {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        @media(max-width: 500px) {
+            font-size: 0.9rem;
+        }
     }
 }
